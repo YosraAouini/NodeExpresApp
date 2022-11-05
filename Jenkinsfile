@@ -32,7 +32,7 @@ pipeline {
              steps{
                 script{
                    
-                   dockerImage = docker.build("karydock/appnode-oct:latest")
+                   dockerImage = docker.build("yaouini/appnode-oct:latest")
                     
                 }
              }
@@ -55,8 +55,8 @@ pipeline {
             steps{
                 withDockerRegistry([credentialsId: "docker-hub", url:""]){
                     //sh 'printenv'
-                    sh 'docker build -t karydock/appnode-oct:""$GIT_COMMIT"" .'
-                    sh 'docker push karydock/appnode-oct:""$GIT_COMMIT"" '
+                    sh 'docker build -t yaouini/appnode-oct:""$GIT_COMMIT"" .'
+                    sh 'docker push yaouini/appnode-oct:""$GIT_COMMIT"" '
                 }
             }
             
