@@ -15,7 +15,6 @@ pipeline {
         
         stage('Build') {
           steps {
-            sh 'npm i nohup -g'  
             sh 'npm --version'  
             sh 'npm install express'
             sh 'npm install mongo'
